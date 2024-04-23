@@ -1,0 +1,49 @@
+.headerContainer{
+    /* background-color: blue; */
+    height: 7.81%;
+}
+
+.header{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-items: center;
+    
+    box-sizing: border-box;
+    max-width: 87.5rem;
+    padding-left: 1.25rem;
+    padding-right: 1.25rem;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.headerUl{
+    display: flex;
+    flex-wrap: wrap;
+    gap: 2.5rem;
+}
+
+.headerUl li a{
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 4px;
+    color: #ffff;
+    position: relative;
+}
+
+.headerUl li a::after{
+    content: "";
+    display: block;
+    height: 2px;
+    width: 0px;
+    background: #ffff;
+    margin-top: 28px;
+    transition: 0.3s;
+    position: absolute;
+}
+
+.headerUl li a:hover::after,
+.headerUl li a.ativo::after {
+    width: 100%;
+}
