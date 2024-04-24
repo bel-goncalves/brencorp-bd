@@ -19,7 +19,7 @@ a{
 }
 
 .bodyContainer{
-    height: 100vh;
+    height: 100%;
     background: url('../img/bg.jpg');
     background-size: cover;
 }

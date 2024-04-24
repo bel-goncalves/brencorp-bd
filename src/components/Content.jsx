@@ -10,7 +10,9 @@ import {
   TableBody,
   TableCell,
   TableContainer,
+  TableFooter,
   TableHead,
+  TablePagination,
   TableRow,
   TextField,
   Toolbar,
@@ -82,6 +84,94 @@ const Content = () => {
       'dt@gmail.com',
       'PE',
     ),
+    createData(
+      8,
+      'Isabel Gonçalves',
+      'Física',
+      'Energia Nuclear',
+      'igl@gmail.com',
+      'AM',
+    ),
+    createData(
+      9,
+      'Ana Maria da Silva Oliveira',
+      'Biologia',
+      'Animais Marinhos',
+      'ana.marias@gmail.com',
+      'PE',
+    ),
+    createData(
+      10,
+      'Ana Maria da Silva Oliveira',
+      'Biologia',
+      'Animais Marinhos',
+      'ana.marias@gmail.com',
+      'PE',
+    ),
+    createData(
+      11,
+      'Ana Maria da Silva Oliveira',
+      'Biologia',
+      'Animais Marinhos',
+      'ana.marias@gmail.com',
+      'PE',
+    ),
+    createData(
+      12,
+      'Ana Maria da Silva Oliveira',
+      'Biologia',
+      'Animais Marinhos',
+      'ana.marias@gmail.com',
+      'PE',
+    ),
+    createData(
+      13,
+      'Ana Maria da Silva Oliveira',
+      'Biologia',
+      'Animais Marinhos',
+      'ana.marias@gmail.com',
+      'PE',
+    ),
+    createData(
+      14,
+      'Ana Maria da Silva Oliveira',
+      'Biologia',
+      'Animais Marinhos',
+      'ana.marias@gmail.com',
+      'PE',
+    ),
+    createData(
+      15,
+      'Ana Maria da Silva Oliveira',
+      'Biologia',
+      'Animais Marinhos',
+      'ana.marias@gmail.com',
+      'PE',
+    ),
+    createData(
+      16,
+      'Ana Maria da Silva Oliveira',
+      'Biologia',
+      'Animais Marinhos',
+      'ana.marias@gmail.com',
+      'PE',
+    ),
+    createData(
+      17,
+      'Ana Maria da Silva Oliveira',
+      'Biologia',
+      'Animais Marinhos',
+      'ana.marias@gmail.com',
+      'PE',
+    ),
+    createData(
+      18,
+      'Ana Maria da Silva Oliveira',
+      'Biologia',
+      'Animais Marinhos',
+      'ana.marias@gmail.com',
+      'PE',
+    ),
   ];
 
   //Table button menu
@@ -93,6 +183,22 @@ const Content = () => {
   const handleClose = () => {
     setButtonMenu(null);
   };
+
+  //Table Pagination
+  const [page, setPage] = React.useState(0);
+  const [rowsPerPage, setRowsPerPage] = React.useState(10);
+
+  const handleChangePage = (event, newPage) => {
+    setPage(newPage);
+  };
+
+  const handleChangeRowsPerPage = (event) => {
+    setRowsPerPage(parseInt(event.target.value, 10));
+    setPage(0);
+  };
+
+  const emptyRows =
+    rowsPerPage - Math.min(rowsPerPage, rows.length - page * rowsPerPage);
 
   return (
     <TableContainer className="tableContainer" sx={{ boxShadow: 2 }}>
@@ -138,44 +244,56 @@ const Content = () => {
           </TableRow>
         </TableHead>
         <TableBody>
-          {rows.map((row) => (
-            <TableRow key={row.id}>
-              <TableCell component="th" scope="row">
-                {row.nome}
-              </TableCell>
-              <TableCell>{row.formacao}</TableCell>
-              <TableCell>{row.atuacao}</TableCell>
-              <TableCell>{row.email}</TableCell>
-              <TableCell>{row.estado}</TableCell>
-              <TableCell>
-                <Button
-                  id="menuButton"
-                  variant="contained"
-                  aria-controls={open ? 'basic-menu' : undefined}
-                  aria-haspopup="true"
-                  aria-expanded={open ? 'true' : undefined}
-                  onClick={handleClick}
-                >
-                  <img src="/img/arrowIcon.svg" alt="" />
-                </Button>
-                <Menu
-                  elevation={1}
-                  id="basic-menu"
-                  anchorEl={buttonMenu}
-                  open={open}
-                  onClose={handleClose}
-                  MenuListProps={{
-                    'aria-labelledby': 'menuButton',
-                  }}
-                >
-                  <MenuItem onClick={handleClose}>Visualizar</MenuItem>
-                  <MenuItem onClick={handleClose}>Editar</MenuItem>
-                  <MenuItem onClick={handleClose}>Excluir</MenuItem>
-                </Menu>
-              </TableCell>
-            </TableRow>
-          ))}
+          {rows
+            .slice(page * rowsPerPage, page * rowsPerPage + rowsPerPage)
+            .map((row) => (
+              <TableRow key={row.id}>
+                <TableCell component="th" scope="row">
+                  {row.nome}
+                </TableCell>
+                <TableCell>{row.formacao}</TableCell>
+                <TableCell>{row.atuacao}</TableCell>
+                <TableCell>{row.email}</TableCell>
+                <TableCell>{row.estado}</TableCell>
+                <TableCell>
+                  <Button
+                    id="menuButton"
+                    variant="contained"
+                    aria-controls={open ? 'basic-menu' : undefined}
+                    aria-haspopup="true"
+                    aria-expanded={open ? 'true' : undefined}
+                    onClick={handleClick}
+                  >
+                    <img src="/img/arrowIcon.svg" alt="" />
+                  </Button>
+                  <Menu
+                    elevation={1}
+                    id="basic-menu"
+                    anchorEl={buttonMenu}
+                    open={open}
+                    onClose={handleClose}
+                    MenuListProps={{
+                      'aria-labelledby': 'menuButton',
+                    }}
+                  >
+                    <MenuItem onClick={handleClose}>Visualizar</MenuItem>
+                    <MenuItem onClick={handleClose}>Editar</MenuItem>
+                    <MenuItem onClick={handleClose}>Excluir</MenuItem>
+                  </Menu>
+                </TableCell>
+              </TableRow>
+            ))}
         </TableBody>
+        <TableFooter>
+          <TablePagination
+            count={rows.length}
+            page={page}
+            onPageChange={handleChangePage}
+            rowsPerPage={rowsPerPage}
+            onRowsPerPageChange={handleChangeRowsPerPage}
+            rowsPerPageOptions={[10, 20, 40]}
+          />
+        </TableFooter>
       </Table>
     </TableContainer>
   );
