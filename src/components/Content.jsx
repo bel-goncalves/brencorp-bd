@@ -274,7 +274,11 @@ const Content = () => {
 
   return (
     <TableContainer className="tableContainer" sx={{ boxShadow: 2 }}>
-      <CardHeader title="Consultores" />
+      <CardHeader
+        title="Consultores"
+        disableTypography={true}
+        sx={{ fontFamily: 'Montserrat', fontWeight: 'bold', fontSize: 20 }}
+      />
       <Divider />
       <Toolbar className="toolbar">
         <div className="search">
@@ -307,11 +311,21 @@ const Content = () => {
       <Table>
         <TableHead>
           <TableRow>
-            <TableCell sx={{ fontWeight: 'bold' }}>Nome</TableCell>
-            <TableCell sx={{ fontWeight: 'bold' }}>Formação</TableCell>
-            <TableCell sx={{ fontWeight: 'bold' }}>Atuação</TableCell>
-            <TableCell sx={{ fontWeight: 'bold' }}>Email</TableCell>
-            <TableCell sx={{ fontWeight: 'bold' }}>Estado</TableCell>
+            <TableCell sx={{ fontFamily: 'Montserrat', fontWeight: 'bold' }}>
+              Nome
+            </TableCell>
+            <TableCell sx={{ fontFamily: 'Montserrat', fontWeight: 'bold' }}>
+              Formação
+            </TableCell>
+            <TableCell sx={{ fontFamily: 'Montserrat', fontWeight: 'bold' }}>
+              Atuação
+            </TableCell>
+            <TableCell sx={{ fontFamily: 'Montserrat', fontWeight: 'bold' }}>
+              Email
+            </TableCell>
+            <TableCell sx={{ fontFamily: 'Montserrat', fontWeight: 'bold' }}>
+              Estado
+            </TableCell>
             <TableCell></TableCell>
           </TableRow>
         </TableHead>

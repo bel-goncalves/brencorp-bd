@@ -16,12 +16,6 @@ const Header = () => {
           </li>
           <li>
             <a href="">
-              <img src="/img/PersonFilled.svg" alt="" />
-              Perfil
-            </a>
-          </li>
-          <li>
-            <a href="">
               <img src="/img/LogoutFilled.svg" alt="" />
               Sair
             </a>
