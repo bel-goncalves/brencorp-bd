@@ -23,7 +23,7 @@ import { shadows } from '@mui/system';
 import React from 'react';
 
 const Content = () => {
-  //Dados temporários p simular
+  //Dados temporários Mock
   function createData(id, nome, formacao, atuacao, email, estado) {
     return { id, nome, formacao, atuacao, email, estado };
   }
@@ -41,7 +41,7 @@ const Content = () => {
       'Matheus Cabral',
       'Engenharia da Computação',
       'Cloud Computing',
-      'matheusmhpc@gmail.com',
+      'matheushc@gmail.com',
       'AL',
     ),
     createData(
@@ -171,6 +171,78 @@ const Content = () => {
       'Animais Marinhos',
       'ana.marias@gmail.com',
       'PE',
+    ),
+    createData(
+      19,
+      'Carla Souza Amorim',
+      'Biomedicina',
+      'Microorganismos',
+      'amorim.carla@gmail.com',
+      'PI',
+    ),
+    createData(
+      20,
+      'Carla Souza Amorim',
+      'Biomedicina',
+      'Microorganismos',
+      'amorim.carla@gmail.com',
+      'PI',
+    ),
+    createData(
+      21,
+      'Carla Souza Amorim',
+      'Biomedicina',
+      'Microorganismos',
+      'amorim.carla@gmail.com',
+      'PI',
+    ),
+    createData(
+      22,
+      'Carla Souza Amorim',
+      'Biomedicina',
+      'Microorganismos',
+      'amorim.carla@gmail.com',
+      'PI',
+    ),
+    createData(
+      23,
+      'Carla Souza Amorim',
+      'Biomedicina',
+      'Microorganismos',
+      'amorim.carla@gmail.com',
+      'PI',
+    ),
+    createData(
+      24,
+      'Carla Souza Amorim',
+      'Biomedicina',
+      'Microorganismos',
+      'amorim.carla@gmail.com',
+      'PI',
+    ),
+    createData(
+      25,
+      'Carla Souza Amorim',
+      'Biomedicina',
+      'Microorganismos',
+      'amorim.carla@gmail.com',
+      'PI',
+    ),
+    createData(
+      26,
+      'Carla Souza Amorim',
+      'Biomedicina',
+      'Microorganismos',
+      'amorim.carla@gmail.com',
+      'PI',
+    ),
+    createData(
+      27,
+      'Carla Souza Amorim',
+      'Biomedicina',
+      'Microorganismos',
+      'amorim.carla@gmail.com',
+      'PI',
     ),
   ];
 
