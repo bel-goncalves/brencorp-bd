@@ -16,7 +16,9 @@ const App = () => {
         </Container>
       </div>
       <div className="footerContainer">
-        <Footer />
+        <Container>
+          <Footer />
+        </Container>
       </div>
     </div>
   );
