@@ -5,6 +5,8 @@
 .tableContainer{
     background: #ffff;
     border-radius: 4px;
+    margin-bottom: 80px;
+    margin-top: 40px;
 }
 
 .toolbar{
