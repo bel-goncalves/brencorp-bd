@@ -3,6 +3,7 @@ import Header from './components/Header';
 import Content from './components/Content';
 import Footer from './components/Footer';
 import { Container } from '@mui/material';
+import Visualizar from './components/Visualizar';
 
 const App = () => {
   return (
@@ -13,6 +14,7 @@ const App = () => {
       <div className="contentContainer">
         <Container>
           <Content />
+          <Visualizar />
         </Container>
       </div>
       <div className="footerContainer">

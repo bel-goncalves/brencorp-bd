@@ -24,8 +24,8 @@ import React from 'react';
 
 const Content = () => {
   //Dados temporários Mock
-  function createData(id, nome, formacao, atuacao, email, estado) {
-    return { id, nome, formacao, atuacao, email, estado };
+  function createData(id, nome, formacao, atuacao, cat, estado) {
+    return { id, nome, formacao, atuacao, cat, estado };
   }
   const rows = [
     createData(
@@ -33,7 +33,7 @@ const Content = () => {
       'Ana Maria da Silva Oliveira',
       'Biologia',
       'Animais Marinhos',
-      'ana.marias@gmail.com',
+      'Sim',
       'PE',
     ),
     createData(
@@ -41,23 +41,16 @@ const Content = () => {
       'Matheus Cabral',
       'Engenharia da Computação',
       'Cloud Computing',
-      'matheushc@gmail.com',
+      'Sim',
       'AL',
     ),
-    createData(
-      3,
-      'Débora Carvalho',
-      'GTI',
-      'Gestão de Projetos',
-      'dbc@gmail.com',
-      'PE',
-    ),
+    createData(3, 'Débora Carvalho', 'GTI', 'Gestão de Projetos', 'Não', 'PE'),
     createData(
       4,
       'Weynne Guimarães',
       'Ciência da Computação',
       'Back-end',
-      'wgl@gmail.com',
+      'Não',
       'PB',
     ),
     createData(
@@ -65,7 +58,7 @@ const Content = () => {
       'Pedro Silva',
       'Engenharia de Pesca',
       'Camarões',
-      'pcs@gmail.com',
+      'Não',
       'SP',
     ),
     createData(
@@ -73,31 +66,17 @@ const Content = () => {
       'Wendislau Victor Silva',
       'Geografia',
       'Geologia',
-      'wvs@gmail.com',
+      'Não',
       'BA',
     ),
-    createData(
-      7,
-      'Diego Tavares',
-      'Química',
-      'pH da Água',
-      'dt@gmail.com',
-      'PE',
-    ),
-    createData(
-      8,
-      'Isabel Gonçalves',
-      'Física',
-      'Energia Nuclear',
-      'igl@gmail.com',
-      'AM',
-    ),
+    createData(7, 'Diego Tavares', 'Química', 'pH da Água', 'Sim', 'PE'),
+    createData(8, 'Isabel Gonçalves', 'Física', 'Energia Nuclear', 'Não', 'AM'),
     createData(
       9,
       'Ana Maria da Silva Oliveira',
       'Biologia',
       'Animais Marinhos',
-      'ana.marias@gmail.com',
+      'Sim',
       'PE',
     ),
     createData(
@@ -105,7 +84,7 @@ const Content = () => {
       'Ana Maria da Silva Oliveira',
       'Biologia',
       'Animais Marinhos',
-      'ana.marias@gmail.com',
+      'Sim',
       'PE',
     ),
     createData(
@@ -113,7 +92,7 @@ const Content = () => {
       'Ana Maria da Silva Oliveira',
       'Biologia',
       'Animais Marinhos',
-      'ana.marias@gmail.com',
+      'Sim',
       'PE',
     ),
     createData(
@@ -121,7 +100,7 @@ const Content = () => {
       'Ana Maria da Silva Oliveira',
       'Biologia',
       'Animais Marinhos',
-      'ana.marias@gmail.com',
+      'Sim',
       'PE',
     ),
     createData(
@@ -129,7 +108,7 @@ const Content = () => {
       'Ana Maria da Silva Oliveira',
       'Biologia',
       'Animais Marinhos',
-      'ana.marias@gmail.com',
+      'Sim',
       'PE',
     ),
     createData(
@@ -137,7 +116,7 @@ const Content = () => {
       'Ana Maria da Silva Oliveira',
       'Biologia',
       'Animais Marinhos',
-      'ana.marias@gmail.com',
+      'Sim',
       'PE',
     ),
     createData(
@@ -145,7 +124,7 @@ const Content = () => {
       'Ana Maria da Silva Oliveira',
       'Biologia',
       'Animais Marinhos',
-      'ana.marias@gmail.com',
+      'Sim',
       'PE',
     ),
     createData(
@@ -153,7 +132,7 @@ const Content = () => {
       'Ana Maria da Silva Oliveira',
       'Biologia',
       'Animais Marinhos',
-      'ana.marias@gmail.com',
+      'Sim',
       'PE',
     ),
     createData(
@@ -161,7 +140,7 @@ const Content = () => {
       'Ana Maria da Silva Oliveira',
       'Biologia',
       'Animais Marinhos',
-      'ana.marias@gmail.com',
+      'Sim',
       'PE',
     ),
     createData(
@@ -169,7 +148,7 @@ const Content = () => {
       'Ana Maria da Silva Oliveira',
       'Biologia',
       'Animais Marinhos',
-      'ana.marias@gmail.com',
+      'Sim',
       'PE',
     ),
     createData(
@@ -177,7 +156,7 @@ const Content = () => {
       'Carla Souza Amorim',
       'Biomedicina',
       'Microorganismos',
-      'amorim.carla@gmail.com',
+      'Não',
       'PI',
     ),
     createData(
@@ -185,7 +164,7 @@ const Content = () => {
       'Carla Souza Amorim',
       'Biomedicina',
       'Microorganismos',
-      'amorim.carla@gmail.com',
+      'Não',
       'PI',
     ),
     createData(
@@ -193,7 +172,7 @@ const Content = () => {
       'Carla Souza Amorim',
       'Biomedicina',
       'Microorganismos',
-      'amorim.carla@gmail.com',
+      'Não',
       'PI',
     ),
     createData(
@@ -201,7 +180,7 @@ const Content = () => {
       'Carla Souza Amorim',
       'Biomedicina',
       'Microorganismos',
-      'amorim.carla@gmail.com',
+      'Não',
       'PI',
     ),
     createData(
@@ -209,7 +188,7 @@ const Content = () => {
       'Carla Souza Amorim',
       'Biomedicina',
       'Microorganismos',
-      'amorim.carla@gmail.com',
+      'Não',
       'PI',
     ),
     createData(
@@ -217,7 +196,7 @@ const Content = () => {
       'Carla Souza Amorim',
       'Biomedicina',
       'Microorganismos',
-      'amorim.carla@gmail.com',
+      'Não',
       'PI',
     ),
     createData(
@@ -225,7 +204,7 @@ const Content = () => {
       'Carla Souza Amorim',
       'Biomedicina',
       'Microorganismos',
-      'amorim.carla@gmail.com',
+      'Não',
       'PI',
     ),
     createData(
@@ -233,7 +212,7 @@ const Content = () => {
       'Carla Souza Amorim',
       'Biomedicina',
       'Microorganismos',
-      'amorim.carla@gmail.com',
+      'Não',
       'PI',
     ),
     createData(
@@ -241,7 +220,7 @@ const Content = () => {
       'Carla Souza Amorim',
       'Biomedicina',
       'Microorganismos',
-      'amorim.carla@gmail.com',
+      'Não',
       'PI',
     ),
   ];
@@ -314,6 +293,7 @@ const Content = () => {
             <TableCell sx={{ fontFamily: 'Montserrat', fontWeight: 'bold' }}>
               Nome
             </TableCell>
+
             <TableCell sx={{ fontFamily: 'Montserrat', fontWeight: 'bold' }}>
               Formação
             </TableCell>
@@ -321,10 +301,10 @@ const Content = () => {
               Atuação
             </TableCell>
             <TableCell sx={{ fontFamily: 'Montserrat', fontWeight: 'bold' }}>
-              Email
+              Estado
             </TableCell>
             <TableCell sx={{ fontFamily: 'Montserrat', fontWeight: 'bold' }}>
-              Estado
+              CAT
             </TableCell>
             <TableCell></TableCell>
           </TableRow>
@@ -339,8 +319,8 @@ const Content = () => {
                 </TableCell>
                 <TableCell>{row.formacao}</TableCell>
                 <TableCell>{row.atuacao}</TableCell>
-                <TableCell>{row.email}</TableCell>
                 <TableCell>{row.estado}</TableCell>
+                <TableCell>{row.cat}</TableCell>
                 <TableCell>
                   <Button
                     id="menuButton"
@@ -369,6 +349,11 @@ const Content = () => {
                 </TableCell>
               </TableRow>
             ))}
+          {emptyRows > 0 && (
+            <TableRow style={{ height: 53 * emptyRows }}>
+              <TableCell colSpan={6} />
+            </TableRow>
+          )}
         </TableBody>
         <TableFooter>
           <TablePagination
