@@ -1,5 +1,4 @@
 .headerContainer{
-    /* background-color: blue; */
     height: 7.81%;
 }
 
@@ -8,7 +7,7 @@
     flex-wrap: wrap;
     justify-content: space-between;
     align-items: center;
-    padding-top: 16px;
+    padding-top: 1rem;
     
     box-sizing: border-box;
     max-width: 87.5rem;
@@ -30,21 +29,4 @@
     align-items: center;
     gap: 4px;
     color: #ffff;
-    position: relative;
-}
-
-.headerUl li a::after{
-    content: "";
-    display: block;
-    height: 2px;
-    width: 0px;
-    background: #ffff;
-    margin-top: 28px;
-    transition: 0.3s;
-    position: absolute;
-}
-
-.headerUl li a:hover::after,
-.headerUl li a.ativo::after {
-    width: 100%;
 }

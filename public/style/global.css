@@ -15,7 +15,7 @@ ul{
 a{
     font-family: 'Montserrat', Arial, Helvetica, sans-serif;
     text-decoration: none;
-    color: inherit; /* herda do elemento pai*/
+    color: inherit; 
 }
 
 p{
