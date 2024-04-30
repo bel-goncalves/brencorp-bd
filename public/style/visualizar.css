@@ -14,7 +14,9 @@
 }
 
 .MuiCard-root{
-    max-width: fit-content;
+    /* max-width: fit-content; */
+    min-width: min-content;
+    max-width: 380px;
 }
 
 .cardTitles{
@@ -23,6 +25,7 @@
     display: flex;
     flex-wrap: wrap;
     align-items: center;
+    justify-content: center;
     padding-left: 60px;
     padding-right: 60px;
 }

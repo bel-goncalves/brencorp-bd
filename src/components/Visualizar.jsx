@@ -31,6 +31,9 @@ const Visualizar = () => {
                 Nascimento:<span>{'10/06/1983'}</span>
               </p>
               <p>
+                Idade:<span>{'41'}</span>
+              </p>
+              <p>
                 CPF:<span>{'290.091.884-02'}</span>
               </p>
               <p>
@@ -66,6 +69,18 @@ const Visualizar = () => {
               <p>
                 Profissão:<span>{'Químico'}</span>
               </p>
+              <p>
+                Atuação:<span>{'Química Ambiental'}</span>
+              </p>
+              <p>
+                CAT:<span>{'link_cat.google.com'}</span>
+              </p>
+              <p>
+                Observação:
+                <span>
+                  {'Atuou junto à brencorp no projeto Impactos Ambientais'}
+                </span>
+              </p>
             </div>
           </CardContent>
         </Card>
@@ -83,6 +98,18 @@ const Visualizar = () => {
             <div className="cardContent">
               <p>
                 Formação:<span>{'Química'}</span>
+              </p>
+              <p>
+                Tipo de Fomação:<span>{'Bacharelado'}</span>
+              </p>
+              <p>
+                Ano de Fomação:<span>{'2010'}</span>
+              </p>
+              <p>
+                Tempo de formado:<span>{'14 anos'}</span>
+              </p>
+              <p>
+                Instituição:<span>{'UFPI'}</span>
               </p>
             </div>
           </CardContent>
