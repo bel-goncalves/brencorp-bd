@@ -22,10 +22,6 @@
     padding: 4px;
 }
 
-#addButton{
-    background: #1CB5D5;
-}
-
 .search{
     display: flex;
     align-items: center;

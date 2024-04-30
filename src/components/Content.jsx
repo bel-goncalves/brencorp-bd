@@ -278,10 +278,9 @@ const Content = () => {
           </Button>
         </div>
         <Button
-          id="addButton"
           size="medium"
           variant="contained"
-          sx={{ boxShadow: 2 }}
+          sx={{ boxShadow: 2, bgcolor: '#1CB5D5' }}
           startIcon={<img src="/img/plusIcon.svg" />}
         >
           Novo Consultor

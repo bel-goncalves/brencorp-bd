@@ -9,7 +9,7 @@
     padding: 16px;
     display: flex;
     flex-wrap: wrap;
-    align-items: center;
+    align-items: baseline;
     justify-content: space-between;
 }
 
@@ -32,4 +32,14 @@
     flex-wrap: wrap;
     padding: 16px;
     gap: 16px;
+}
+
+.cardContent p{
+    font-weight: bold;
+    margin-bottom: 16px;
+}
+
+.cardContent span {
+    font-weight: normal;
+    margin-left: 8px;
 }

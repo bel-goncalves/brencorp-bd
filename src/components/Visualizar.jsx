@@ -23,7 +23,32 @@ const Visualizar = () => {
           </div>
           <Divider />
           <CardContent>
-            <p>conteúdo</p>
+            <div className="cardContent">
+              <p>
+                Nome:<span>{'Nome Sobrenome'}</span>
+              </p>
+              <p>
+                Nascimento:<span>{'10/06/1983'}</span>
+              </p>
+              <p>
+                CPF:<span>{'290.091.884-02'}</span>
+              </p>
+              <p>
+                CNPJ:<span>{''}</span>
+              </p>
+              <p>
+                Email:<span>{'exemail.gmail.com'}</span>
+              </p>
+              <p>
+                Telefone:<span>{'888888-8888'}</span>
+              </p>
+              <p>
+                Estado:<span>{'PE'}</span>
+              </p>
+              <p>
+                Cidade:<span>{'Recife'}</span>
+              </p>
+            </div>
           </CardContent>
         </Card>
         <Card sx={{ bgcolor: '#EBF6FF' }}>
@@ -37,7 +62,11 @@ const Visualizar = () => {
           </div>
           <Divider />
           <CardContent>
-            <p>conteúdo</p>
+            <div className="cardContent">
+              <p>
+                Profissão:<span>{'Químico'}</span>
+              </p>
+            </div>
           </CardContent>
         </Card>
         <Card sx={{ bgcolor: '#EBF6FF' }}>
@@ -51,7 +80,11 @@ const Visualizar = () => {
           </div>
           <Divider />
           <CardContent>
-            <p>conteúdo</p>
+            <div className="cardContent">
+              <p>
+                Formação:<span>{'Química'}</span>
+              </p>
+            </div>
           </CardContent>
         </Card>
       </div>
@@ -67,7 +100,7 @@ const Visualizar = () => {
         <Button
           size="medium"
           variant="contained"
-          sx={{ boxShadow: 2, color: '#ffff', bgcolor: '#1CB5D5' }}
+          sx={{ boxShadow: 2, bgcolor: '#1CB5D5' }}
           startIcon={<img src="/img/pensilIcon.svg" />}
         >
           Editar
