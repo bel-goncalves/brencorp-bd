@@ -4,25 +4,28 @@ import Content from './components/Content';
 import Footer from './components/Footer';
 import { Container } from '@mui/material';
 import Visualizar from './components/Visualizar';
+import { ProfileDataProvider } from './util/Profile';
 
 const App = () => {
   return (
-    <div className="bodyContainer">
-      <div className="headerContainer">
-        <Header />
+    <ProfileDataProvider>
+      <div className="bodyContainer">
+        <div className="headerContainer">
+          <Header />
+        </div>
+        <div className="contentContainer">
+          <Container>
+            <Content />
+            <Visualizar />
+          </Container>
+        </div>
+        <div className="footerContainer">
+          <Container>
+            <Footer />
+          </Container>
+        </div>
       </div>
-      <div className="contentContainer">
-        <Container>
-          <Content />
-          <Visualizar />
-        </Container>
-      </div>
-      <div className="footerContainer">
-        <Container>
-          <Footer />
-        </Container>
-      </div>
-    </div>
+    </ProfileDataProvider>
   );
 };
 

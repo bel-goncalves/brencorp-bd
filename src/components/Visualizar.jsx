@@ -1,8 +1,10 @@
 import { Card, CardContent, CardHeader, Divider, Button } from '@mui/material';
-import { blue } from '@mui/material/colors';
+import Content from './Content';
 import React from 'react';
+import ProfileContext from '../util/Profile';
 
 const Visualizar = () => {
+  const { profileData } = React.useContext(ProfileContext);
   return (
     <div className="cardsContainer">
       <CardHeader
@@ -25,31 +27,31 @@ const Visualizar = () => {
           <CardContent>
             <div className="cardContent">
               <p>
-                Nome:<span>{'Nome Sobrenome'}</span>
+                Nome:<span>{profileData.nome}</span>
               </p>
               <p>
-                Nascimento:<span>{'10/06/1983'}</span>
+                Nascimento:<span>{profileData.nascimento}</span>
               </p>
               <p>
-                Idade:<span>{'41'}</span>
+                Idade:<span>{profileData.idade}</span>
               </p>
               <p>
-                CPF:<span>{'290.091.884-02'}</span>
+                CPF:<span>{profileData.cpf}</span>
               </p>
               <p>
-                CNPJ:<span>{''}</span>
+                CNPJ:<span>{profileData.cnpj}</span>
               </p>
               <p>
-                Email:<span>{'exemail.gmail.com'}</span>
+                Email:<span>{profileData.email}</span>
               </p>
               <p>
-                Telefone:<span>{'888888-8888'}</span>
+                Telefone:<span>{profileData.telefone}</span>
               </p>
               <p>
-                Estado:<span>{'PE'}</span>
+                Estado:<span>{profileData.estado}</span>
               </p>
               <p>
-                Cidade:<span>{'Recife'}</span>
+                Cidade:<span>{profileData.cidade}</span>
               </p>
             </div>
           </CardContent>
@@ -67,19 +69,17 @@ const Visualizar = () => {
           <CardContent>
             <div className="cardContent">
               <p>
-                Profissão:<span>{'Químico'}</span>
+                Profissão:<span>{profileData.profissao}</span>
               </p>
               <p>
-                Atuação:<span>{'Química Ambiental'}</span>
+                Atuação:<span>{profileData.atuacao}</span>
               </p>
               <p>
-                CAT:<span>{'link_cat.google.com'}</span>
+                CAT:<span>{profileData.cat}</span>
               </p>
               <p>
                 Observação:
-                <span>
-                  {'Atuou junto à brencorp no projeto Impactos Ambientais'}
-                </span>
+                <span>{profileData.observacao}</span>
               </p>
             </div>
           </CardContent>
@@ -97,19 +97,19 @@ const Visualizar = () => {
           <CardContent>
             <div className="cardContent">
               <p>
-                Formação:<span>{'Química'}</span>
+                Formação:<span>{profileData.formacao}</span>
               </p>
               <p>
-                Tipo de Fomação:<span>{'Bacharelado'}</span>
+                Tipo de Fomação:<span>{profileData.tipoDeFomacao}</span>
               </p>
               <p>
-                Ano de Fomação:<span>{'2010'}</span>
+                Ano de Fomação:<span>{profileData.anoDeFomacao}</span>
               </p>
               <p>
-                Tempo de formado:<span>{'14 anos'}</span>
+                Tempo de formado:<span>{profileData.tempoDeFormado}</span>
               </p>
               <p>
-                Instituição:<span>{'UFPI'}</span>
+                Instituição:<span>{profileData.instituicao}</span>
               </p>
             </div>
           </CardContent>
