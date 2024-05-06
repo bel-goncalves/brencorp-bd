@@ -1,9 +1,7 @@
 import {
   Button,
   CardHeader,
-  Container,
   Divider,
-  IconButton,
   Menu,
   MenuItem,
   Table,
@@ -16,9 +14,8 @@ import {
   TableRow,
   TextField,
   Toolbar,
+  Link,
 } from '@mui/material';
-
-import { shadows } from '@mui/system';
 
 import React from 'react';
 
@@ -228,11 +225,12 @@ const Content = () => {
   //Table button menu
   const [buttonMenu, setButtonMenu] = React.useState(null);
   const open = Boolean(buttonMenu);
-  const handleClick = (event) => {
-    setButtonMenu(event.currentTarget);
-  };
+
+  const [selectedRow, setSelectedRow] = React.useState(null);
+
   const handleClose = () => {
     setButtonMenu(null);
+    console.log(selectedRow);
   };
 
   //Table Pagination
@@ -292,7 +290,6 @@ const Content = () => {
             <TableCell sx={{ fontFamily: 'Montserrat', fontWeight: 'bold' }}>
               Nome
             </TableCell>
-
             <TableCell sx={{ fontFamily: 'Montserrat', fontWeight: 'bold' }}>
               Formação
             </TableCell>
@@ -327,7 +324,10 @@ const Content = () => {
                     aria-controls={open ? 'basic-menu' : undefined}
                     aria-haspopup="true"
                     aria-expanded={open ? 'true' : undefined}
-                    onClick={handleClick}
+                    onClick={(event) => {
+                      setButtonMenu(event.currentTarget);
+                      setSelectedRow(row);
+                    }}
                   >
                     <img src="/img/arrowIcon.svg" alt="" />
                   </Button>
@@ -341,7 +341,9 @@ const Content = () => {
                       'aria-labelledby': 'menuButton',
                     }}
                   >
-                    <MenuItem onClick={handleClose}>Visualizar</MenuItem>
+                    <MenuItem onClick={handleClose}>
+                      <Link>Visualizar</Link>
+                    </MenuItem>
                     <MenuItem onClick={handleClose}>Editar</MenuItem>
                     <MenuItem onClick={handleClose}>Excluir</MenuItem>
                   </Menu>
