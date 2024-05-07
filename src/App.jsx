@@ -18,7 +18,7 @@ const App = () => {
           <div className="contentContainer">
             <Routes>
               <Route path="/" element={<Content />} />
-              <Route path="visualizar/:id/" element={<Visualizar />} />
+              <Route path="visualizar" element={<Visualizar />} />
             </Routes>
           </div>
           <div className="footerContainer">

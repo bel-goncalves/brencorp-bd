@@ -7,12 +7,13 @@ import {
   Box,
   Container,
 } from '@mui/material';
-import Content from './Content';
 import React from 'react';
 import ProfileContext from '../util/Profile';
 import { Link } from 'react-router-dom';
 
 const Visualizar = () => {
+  window.addEventListener('load', () => (window.location.href = '/'));
+
   const { profileData } = React.useContext(ProfileContext);
 
   return (

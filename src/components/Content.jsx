@@ -575,9 +575,9 @@ const Content = () => {
                         'aria-labelledby': 'menuButton',
                       }}
                     >
-                      <MenuItem onClick={onVisualizar}>
-                        <Link to={`visualizar/${row.id}`}>Visualizar</Link>
-                      </MenuItem>
+                      <Link to={`visualizar`}>
+                        <MenuItem onClick={onVisualizar}>Visualizar</MenuItem>
+                      </Link>
                       <MenuItem onClick={handleClose}>Editar</MenuItem>
                       <MenuItem onClick={handleClose}>Excluir</MenuItem>
                     </Menu>
