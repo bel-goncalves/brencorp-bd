@@ -14,8 +14,10 @@ import {
   TableRow,
   TextField,
   Toolbar,
-  Link,
+  Container,
 } from '@mui/material';
+
+import { Link, NavLink } from 'react-router-dom';
 
 import ProfileContext from '../util/Profile';
 
@@ -481,134 +483,136 @@ const Content = () => {
     rowsPerPage - Math.min(rowsPerPage, rows.length - page * rowsPerPage);
 
   return (
-    <TableContainer className="tableContainer" sx={{ boxShadow: 2 }}>
-      <CardHeader
-        title="Consultores"
-        disableTypography={true}
-        sx={{ fontFamily: 'Montserrat', fontWeight: 'bold', fontSize: 20 }}
-      />
-      <Divider />
-      <Toolbar className="toolbar">
-        <div className="search">
-          <TextField
-            id="outlined-input"
-            label="Pesquisar"
-            placeholder="Nome, formação, atuação..."
-            size="small"
-            aria-label="Pesquisar"
-          />
+    <Container>
+      <TableContainer className="tableContainer" sx={{ boxShadow: 2 }}>
+        <CardHeader
+          title="Consultores"
+          disableTypography={true}
+          sx={{ fontFamily: 'Montserrat', fontWeight: 'bold', fontSize: 20 }}
+        />
+        <Divider />
+        <Toolbar className="toolbar">
+          <div className="search">
+            <TextField
+              id="outlined-input"
+              label="Pesquisar"
+              placeholder="Nome, formação, atuação..."
+              size="small"
+              aria-label="Pesquisar"
+            />
+            <Button
+              id="searchButton"
+              aria-label="Pesquisar"
+              size="medium"
+              variant="contained"
+            >
+              <img src="/img/searchIcon.svg" alt="" />
+            </Button>
+          </div>
           <Button
-            id="searchButton"
-            aria-label="Pesquisar"
             size="medium"
             variant="contained"
+            sx={{ boxShadow: 2, bgcolor: '#1CB5D5' }}
+            startIcon={<img src="/img/plusIcon.svg" />}
           >
-            <img src="/img/searchIcon.svg" alt="" />
+            Novo Consultor
           </Button>
-        </div>
-        <Button
-          size="medium"
-          variant="contained"
-          sx={{ boxShadow: 2, bgcolor: '#1CB5D5' }}
-          startIcon={<img src="/img/plusIcon.svg" />}
-        >
-          Novo Consultor
-        </Button>
-      </Toolbar>
-      <Table>
-        <TableHead>
-          <TableRow>
-            <TableCell sx={{ fontFamily: 'Montserrat', fontWeight: 'bold' }}>
-              Nome
-            </TableCell>
-            <TableCell sx={{ fontFamily: 'Montserrat', fontWeight: 'bold' }}>
-              Formação
-            </TableCell>
-            <TableCell sx={{ fontFamily: 'Montserrat', fontWeight: 'bold' }}>
-              Atuação
-            </TableCell>
-            <TableCell sx={{ fontFamily: 'Montserrat', fontWeight: 'bold' }}>
-              Estado
-            </TableCell>
-            <TableCell sx={{ fontFamily: 'Montserrat', fontWeight: 'bold' }}>
-              CAT
-            </TableCell>
-            <TableCell></TableCell>
-          </TableRow>
-        </TableHead>
-        <TableBody>
-          {rows
-            .slice(page * rowsPerPage, page * rowsPerPage + rowsPerPage)
-            .map((row) => (
-              <TableRow key={row.id}>
-                <TableCell component="th" scope="row">
-                  {row.nome}
-                </TableCell>
-                <TableCell>{row.formacao}</TableCell>
-                <TableCell>{row.atuacao}</TableCell>
-                <TableCell>{row.estado}</TableCell>
-                <TableCell>{row.cat}</TableCell>
-                <TableCell>
-                  <Button
-                    id="menuButton"
-                    variant="contained"
-                    aria-controls={open ? 'basic-menu' : undefined}
-                    aria-haspopup="true"
-                    aria-expanded={open ? 'true' : undefined}
-                    onClick={(event) => {
-                      setButtonMenu(event.currentTarget);
-                      setSelectedRow(row);
-                    }}
-                  >
-                    <img src="/img/arrowIcon.svg" alt="" />
-                  </Button>
-                  <Menu
-                    elevation={1}
-                    id="basic-menu"
-                    anchorEl={buttonMenu}
-                    open={open}
-                    onClose={handleClose}
-                    MenuListProps={{
-                      'aria-labelledby': 'menuButton',
-                    }}
-                  >
-                    <MenuItem onClick={onVisualizar}>
-                      <Link>Visualizar</Link>
-                    </MenuItem>
-                    <MenuItem onClick={handleClose}>Editar</MenuItem>
-                    <MenuItem onClick={handleClose}>Excluir</MenuItem>
-                  </Menu>
-                </TableCell>
-              </TableRow>
-            ))}
-          {emptyRows > 0 && (
-            <TableRow style={{ height: 53 * emptyRows }}>
-              <TableCell colSpan={6} />
+        </Toolbar>
+        <Table>
+          <TableHead>
+            <TableRow>
+              <TableCell sx={{ fontFamily: 'Montserrat', fontWeight: 'bold' }}>
+                Nome
+              </TableCell>
+              <TableCell sx={{ fontFamily: 'Montserrat', fontWeight: 'bold' }}>
+                Formação
+              </TableCell>
+              <TableCell sx={{ fontFamily: 'Montserrat', fontWeight: 'bold' }}>
+                Atuação
+              </TableCell>
+              <TableCell sx={{ fontFamily: 'Montserrat', fontWeight: 'bold' }}>
+                Estado
+              </TableCell>
+              <TableCell sx={{ fontFamily: 'Montserrat', fontWeight: 'bold' }}>
+                CAT
+              </TableCell>
+              <TableCell></TableCell>
             </TableRow>
-          )}
-        </TableBody>
-        <TableFooter>
-          <TablePagination
-            count={rows.length}
-            page={page}
-            onPageChange={handleChangePage}
-            rowsPerPage={rowsPerPage}
-            onRowsPerPageChange={handleChangeRowsPerPage}
-            rowsPerPageOptions={[10, 20, 40]}
-            labelRowsPerPage="Linhas por página"
-            labelDisplayedRows={function defaultLabelDisplayedRows({
-              from,
-              to,
-              count,
-            }) {
-              return `${from}–${to} de ${
-                count !== -1 ? count : `more than ${to}`
-              }`;
-            }}
-          />
-        </TableFooter>
-      </Table>
-    </TableContainer>
+          </TableHead>
+          <TableBody>
+            {rows
+              .slice(page * rowsPerPage, page * rowsPerPage + rowsPerPage)
+              .map((row) => (
+                <TableRow key={row.id} hover={true}>
+                  <TableCell component="th" scope="row">
+                    {row.nome}
+                  </TableCell>
+                  <TableCell>{row.formacao}</TableCell>
+                  <TableCell>{row.atuacao}</TableCell>
+                  <TableCell>{row.estado}</TableCell>
+                  <TableCell>{row.cat}</TableCell>
+                  <TableCell>
+                    <Button
+                      id="menuButton"
+                      variant="contained"
+                      aria-controls={open ? 'basic-menu' : undefined}
+                      aria-haspopup="true"
+                      aria-expanded={open ? 'true' : undefined}
+                      onClick={(event) => {
+                        setButtonMenu(event.currentTarget);
+                        setSelectedRow(row);
+                      }}
+                    >
+                      <img src="/img/arrowIcon.svg" alt="" />
+                    </Button>
+                    <Menu
+                      elevation={1}
+                      id="basic-menu"
+                      anchorEl={buttonMenu}
+                      open={open}
+                      onClose={handleClose}
+                      MenuListProps={{
+                        'aria-labelledby': 'menuButton',
+                      }}
+                    >
+                      <MenuItem onClick={onVisualizar}>
+                        <Link to={`visualizar/${row.id}`}>Visualizar</Link>
+                      </MenuItem>
+                      <MenuItem onClick={handleClose}>Editar</MenuItem>
+                      <MenuItem onClick={handleClose}>Excluir</MenuItem>
+                    </Menu>
+                  </TableCell>
+                </TableRow>
+              ))}
+            {emptyRows > 0 && (
+              <TableRow style={{ height: 53 * emptyRows }}>
+                <TableCell colSpan={6} />
+              </TableRow>
+            )}
+          </TableBody>
+          <TableFooter>
+            <TablePagination
+              count={rows.length}
+              page={page}
+              onPageChange={handleChangePage}
+              rowsPerPage={rowsPerPage}
+              onRowsPerPageChange={handleChangeRowsPerPage}
+              rowsPerPageOptions={[10, 20, 40]}
+              labelRowsPerPage="Linhas por página"
+              labelDisplayedRows={function defaultLabelDisplayedRows({
+                from,
+                to,
+                count,
+              }) {
+                return `${from}–${to} de ${
+                  count !== -1 ? count : `more than ${to}`
+                }`;
+              }}
+            />
+          </TableFooter>
+        </Table>
+      </TableContainer>
+    </Container>
   );
 };
 

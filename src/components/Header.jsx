@@ -1,4 +1,5 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 
 const Header = () => {
   return (
@@ -9,10 +10,10 @@ const Header = () => {
       <nav className="headerNav">
         <ul className="headerUl">
           <li>
-            <a href="">
+            <Link to={'/'}>
               <img src="/img/FolderFilled.svg" />
               Consultores
-            </a>
+            </Link>
           </li>
           <li>
             <a href="">

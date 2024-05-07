@@ -5,27 +5,30 @@ import Footer from './components/Footer';
 import { Container } from '@mui/material';
 import Visualizar from './components/Visualizar';
 import { ProfileDataProvider } from './util/Profile';
+import { BrowserRouter, Routes, Route } from 'react-router-dom';
 
 const App = () => {
   return (
-    <ProfileDataProvider>
-      <div className="bodyContainer">
-        <div className="headerContainer">
-          <Header />
+    <BrowserRouter>
+      <ProfileDataProvider>
+        <div className="bodyContainer">
+          <div className="headerContainer">
+            <Header />
+          </div>
+          <div className="contentContainer">
+            <Routes>
+              <Route path="/" element={<Content />} />
+              <Route path="visualizar/:id/" element={<Visualizar />} />
+            </Routes>
+          </div>
+          <div className="footerContainer">
+            <Container>
+              <Footer />
+            </Container>
+          </div>
         </div>
-        <div className="contentContainer">
-          <Container>
-            <Content />
-            <Visualizar />
-          </Container>
-        </div>
-        <div className="footerContainer">
-          <Container>
-            <Footer />
-          </Container>
-        </div>
-      </div>
-    </ProfileDataProvider>
+      </ProfileDataProvider>
+    </BrowserRouter>
   );
 };
 
